@@ -1,4 +1,4 @@
-import { Instance } from './interfaces/Instance'
+import type { Instance } from './interfaces/Instance'
 
 /**
  * Parses the instance

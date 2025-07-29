@@ -1,4 +1,9 @@
-import { parseInstance, parseLocation } from 'vrchat-location-parser'
+import {
+  parseInstance,
+  parseLocation,
+  formatInstanceId,
+  formatLocation,
+} from 'vrchat-location-parser'
 
 console.log(
   parseLocation(
@@ -22,9 +27,19 @@ console.log(
   parseLocation('wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd:69420~region(us)'),
 )
 
+const instance = parseInstance(
+  'wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd',
+  '69420~region(us)',
+)
+
+console.log(instance)
+console.log(formatInstanceId(instance!))
+console.log(formatLocation(instance!))
+
 console.log(
-  parseInstance(
-    'wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd',
-    '69420~region(us)',
-  ),
+  formatLocation({
+    worldId: 'wrld_4432ea9b-729c-46e3-8eaf-846aa0a37fdd',
+    name: '12345',
+    type: 'public',
+  }),
 )
